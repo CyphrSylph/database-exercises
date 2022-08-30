@@ -18,13 +18,16 @@ WHERE last_name LIKE '%q%';
 -- Update your query for 'Irena', 'Vidya', or 'Maya' to use OR instead of IN [709 rows]
 SELECT *
 FROM employees
-WHERE first_name = 'Irena' || 'Vidya' || 'Maya';
+WHERE first_name = 'Irena'
+       || first_name = 'Vidya'
+       || first_name =  'Maya';
 
 -- Add a condition to the previous query to find everybody with those names who is also male [441 rows]
 SELECT *
 FROM employees
-WHERE first_name = 'Irena' || 'Vidya' || 'Maya'
-AND gender = 'M';
+WHERE first_name = 'Irena' AND gender = 'M'
+          || first_name = 'Vidya' AND gender = 'M'
+          || first_name =  'Maya' AND gender = 'M';
 
 -- Find all employees whose last name starts or ends with 'E' [30,723 rows]
 SELECT *
